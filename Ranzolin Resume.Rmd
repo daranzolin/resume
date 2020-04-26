@@ -1,0 +1,143 @@
+---
+name: David Ranzolin
+phone: 707-299-9216
+www: daranzolin.github.io
+email: "daranzolin@gmail.com"
+github: daranzolin
+linkedin: dranzolin
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: 414141
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tidyverse)
+# library(gt)
+```
+
+# Overview
+
+Skilled analyst, developer, and GIS specialist who can get, clean, analyze, and communicate data.
+
+## Languages 
+
+```{r fig.height=2.1}
+# library(ggforce)
+tibble(
+  tool = c("R", "SQL", "D3.js", "Git", "HTML/CSS", "Python", "Bash"),
+  rating = c(8, 6, 6, 5, 5, 3.7, 3),
+  desc = c("Creator of:\n  ViewPipeSteps\n  d3rain\n  rcanvas\n  rperseus\n  inferregex\nand many others...",
+           rep("", 6))
+) %>% 
+  ggplot(aes(reorder(tool, rating), rating)) +
+  geom_col(fill = '#C0C0C0') +
+  geom_text(aes(label = tool, y = 0.2), hjust = 0, color = 'white') +
+  # ggforce::geom_mark_rect(aes(y = rating + 0.22, description = desc, filter = tool == "R"), expand = -1, label.colour = '#333333', font.face = "italic") +
+  labs(x = NULL, y = NULL) +
+  coord_flip() +
+  ylim(0, 9) + 
+  # geom_hline(yintercept = 3, linetype = 'dashed', alpha = 0.3) +
+  # geom_hline(yintercept = 6, linetype = 'dashed', alpha = 0.3) +
+  theme_void() 
+```
+
+# Experience
+```{r}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Senior Institutional Research Analyst", "San Francisco State University", "San Francisco, CA", "Apr 2019 - Present", "Senior Analyst and creator of multiple internal R packages. Within the packages are plot and table themes, connections to various databases and APIs, report, slide, and project templates, calculations, and other utility functions. Architect for small ETL projects.",
+  "Data Analyst", "UCSC Extension Silicon Valley", "Santa Clara, CA", "Jan 2017 - Mar 2019", "Gathered, cleaned, assembled, and visualized data; performed analytical studies on a variety of policies, programs and issues; and participated in administrative policy and program planning and development. Assisted the Senior Business Analyst with ETL solutions. Cognos Analytics report author and trainer. Data Governance Group Chair. Knowledge base administrator (Confluence).",
+  "Data Analyst", "Scout from University of California", "Santa Clara, CA", "Feb 2014 - Dec 2016", "Conducted a variety of analyses requiring knowledge of: (1) University administrative organization, policies, procedures, and practices; (2) K-12
+online education; (3) instructional design; and (4) statistical methods. Staff Advisory Board member.",
+ ) %>% 
+  detailed_entries(role, dates, company, loc, details)
+```
+
+# Education
+```{r}
+tribble(
+  ~ degree, ~ uni, ~ dates,
+  "Master of Theological Studies", "Emory University",  "2011 - 2013",
+  "BA in Religious Studies/BA in English", "Pacific Union College",  "2005 - 2009",
+  "Certificate in Database and Data Analytics", "UCSC Extension Silicon Valley", "2014 - 2016",
+  "Specialization in Geographic Information Systems", "UC Davis", "2017 - 2018"
+) %>% 
+  detailed_entries(degree, dates, uni)
+```
+
+# Awards
+
+```{r}
+tribble(
+  ~ degree, ~ uni, ~ dates, ~details,
+  "Scout from University of California", "Staff Appreciation and Recognition Award (2x)", "2015, 2016", "In recognition of exemplary performance and contributions.",
+  "Emory University", "Myki Mobley Award", "2013", "For outstanding academic performance."
+) %>% 
+  detailed_entries(degree, dates, uni, why = details)
+```
+
+# Software
+
+## API Clients
+
+- **[rcanvas](https://github.com/daranzolin/rcanvas)** - R Client for your Canvas LMS. Get student data, copy courses, grade students, etc.
+
+- **[rperseus](https://github.com/ropensci/rperseus)** - Texts from the ancient world and a toolkit to unpack them. rOpenSci reviewed.
+
+- **[rEvalKit](https://github.com/daranzolin/rEvalKit)** - R Client for the EvaluationKit REST API.
+
+## Data Visualization
+
+- **[compareBars](https://github.com/daranzolin/compareBars)** - Simplify comparative bar charts in R with d3.js.
+
+- **[countem](https://github.com/daranzolin/countem)** - Cycle through counts of variables with d3.js.
+
+- **[clockwork](https://github.com/daranzolin/clockwork)** - Create radial line charts with d3.js. 
+
+- **[d3rain](https://github.com/daranzolin/d3rain)** - 'Raindrop' visualizations in R with d3.js.
+
+- **[pinpoint](https://github.com/daranzolin/pinpoint)** - Interactively explore a distribution with d3.js.
+
+- **[quickglobe](https://github.com/daranzolin/quickglobe)** - Interactive 3D globe built with d3.js.
+
+- **[California School District Diversity](https://github.com/daranzolin/CA-School-District-Diversity)** - Shiny app exploring discrepancies between student/teacher diversity.
+
+## RStudio Addins
+
+- **[compareAreas](https://github.com/daranzolin/compareAreas)** - Compare areas across square meters, kilometers, feet, miles, and acres.
+
+- **[ViewPipeSteps](https://github.com/daranzolin/ViewPipeSteps)** - Generate View() tabs for each step in a pipe chain.
+
+## Other
+
+- **[funcreporter](https://github.com/daranzolin/funcreporter)** - A function and Shiny gadget to render Rmd templates.
+
+- **[inferregex](https://github.com/daranzolin/inferregex)** - Infer the regular expression (regex) of a string.
+
+- **[intermittent](https://github.com/daranzolin/intermittent)** - An S3 class to work with term data.
+
+- **[kapow](https://github.com/daranzolin/kapow)** - Detonate R objects and assign the remains to an environment of your choice.
+
+- **[textych](https://github.com/daranzolin/textych)** - Create interactive text parallels.
+
+# Talks
+
+- **R for Everything: Getting, Cleaning, Visualizing, and Analyzing Data** - Talk delivered at the California Association for Institutional Research (CAIR), 2016. 
+
+- **Improving the Student's Digital Experience** - Talk delivered at the Jenzabar Annual Meetings (JAM), 2018.
+
+- **[Building Internal R Packages]({{site.url}}/slides/Presentation_Slides.html)** - Talk delivered at the California Association for Institutional Research (CAIR), 2019.
+
+# Volunteering
+
+- Teacher Assistant at New American Pathways, 2011
+
+- Instructor at Lee Arrendale State Prison, 2012
+
+- GED/Literacy Tutor at Elmwood Correctional Facility, 2014 - 2015
+
+- Staff Advisory Board Member at UC Santa Cruz, 2015 - 2018
+
+
